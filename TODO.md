@@ -2,11 +2,7 @@
 参考:tools/init_db.py
 
 # flask环境部署
-pip install virtualenv
-virtualenv /usr/local/venv
-. /usr/local/venv/bin/activate
-pip install Flask Flask-MongoAlchemy
-pip install uwsgi
+参考:tools/flask.sh
 
 # nginx环境部署
 cat > /etc/nginx/nginx.conf << EOF
