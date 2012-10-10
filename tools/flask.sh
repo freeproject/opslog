@@ -1,4 +1,4 @@
-sudo pip install virtualenv==1.8.2
+sudo pip install virtualenv
 virtualenv /usr/local/venv
 . /usr/local/venv/bin/activate
 pip install Flask==0.9
