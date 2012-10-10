@@ -9,7 +9,7 @@ pip install Flask Flask-MongoAlchemy
 pip install uwsgi
 
 # nginx环境部署
-<code>
+<pre><code>
 cat > /etc/nginx/nginx.conf << EOF
 worker_processes  1;
 events {
@@ -32,4 +32,4 @@ http {
      }
 }
 EOF
-</code>
+</code></pre>
