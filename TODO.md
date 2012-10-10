@@ -32,10 +32,15 @@
 
 ## 客户端部署
 复制
-/opt/project/opslog/tools/tailflog.py 
+
+/opt/project/opslog/tools/tailflog.py
+
 到客户机
+
 /opt/admin/tailflog.py
+
 运行实例
+
     python /admin/tailflog.py /var/log/auth.log opslog auth syslog
     参数：/var/log/auth.log  ----> 读取的日志文件
           opslog            ----> 连接mongodb数据库名称呼
