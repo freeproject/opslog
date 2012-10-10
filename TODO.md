@@ -10,26 +10,25 @@ pip install uwsgi
 
 # nginx环境部署
 <pre><code>
-cat > /etc/nginx/nginx.conf << EOF
-worker_processes  1;
-events {
-    worker_connections  1024;
-}
-http {
-    include       mime.types;
-    default_type  application/octet-stream;
-    sendfile        on;
-    keepalive_timeout  65;
-    server {
-        listen       80;
-        server_name  10.0.25.3;
-    root /data/project/opslog/static;
-        location / { 
-        include uwsgi_params; 
-        uwsgi_pass unix:/tmp/uwsgi.sock; 
+    cat > /etc/nginx/nginx.conf << EOF
+    worker_processes  1;
+    events {
+        worker_connections  1024;
     }
-
-     }
-}
+    http {
+        include       mime.types;
+        default_type  application/octet-stream;
+        sendfile        on;
+        keepalive_timeout  65;
+        server {
+            listen       80;
+            server_name  10.0.25.3;
+        root /data/project/opslog/static;
+            location / { 
+            include uwsgi_params; 
+            uwsgi_pass unix:/tmp/uwsgi.sock; 
+            }
+        }
+    }
 EOF
 </code></pre>
