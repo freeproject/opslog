@@ -1,3 +1,5 @@
+# 项目结构
+
 # 自动化部署
 参考: tools/setup.py
 
@@ -5,11 +7,7 @@
 参考: tools/init_db.py
 
 # flask环境部署
-    pip install virtualenv
-    virtualenv /usr/local/venv
-    . /usr/local/venv/bin/activate
-    pip install Flask Flask-MongoAlchemy
-    pip install uwsgi
+参考：tools/flask.sh
 
 # nginx环境部署
     cat > /etc/nginx/nginx.conf << EOF
@@ -24,7 +22,7 @@
         keepalive_timeout  65;
         server {
             listen       80;
-            server_name  10.0.25.3;
+            server_name  0.0.0.0;
         root /data/project/opslog/static;
             location / { 
             include uwsgi_params; 
