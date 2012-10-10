@@ -8,7 +8,7 @@
 ### flask环境部署
 /opt/project/opslog/tools/flask.sh
 ### nginx环境部署
-    cat > /etc/nginx/nginx.conf << EOF
+    cat > /opt/nginx/conf/nginx.conf << EOF
     worker_processes  1;
     events {
         worker_connections  1024;
