@@ -12,8 +12,11 @@
 
 #### client端: tailflog.py
 功能：通过类似unix命令tail -f的方式，将信息转储到mongodb数据库。
+
 之前采用facebook的开源方案fluent, 但是在实际的测试过程中，fluent仍然存在一些bug.
+
 比如日志正则格式不对，会造成cpu load飙升，信息不能入库。由于实在不怎么懂ruby, 所
+
 以采用类似的原理重新写了一个客户端。
 
 #### server端: flask + mongodb
