@@ -40,7 +40,7 @@
 例子：
 
     python /admin/tailflog.py /var/log/auth.log opslog auth syslog
-    参数：/var/log/auth.log ----> 日志读取文件
-          opslog            ----> mongodb数据库名
-          auth              ----> mongodb集合名
+    参数：/var/log/auth.log  ----> 读取的日志文件
+          opslog            ----> 连接mongodb数据库名称呼
+          auth              ----> 连接mongodb集合名称
           syslog            ----> 日志格式
