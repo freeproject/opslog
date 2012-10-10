@@ -36,9 +36,11 @@
 
 # 客户端部署
 参考：tools/tailflog.py
+
 例子：
-python /admin/tailflog.py /var/log/auth.log opslog auth syslog
-注：/var/log/auth.log ----> 日志读取文件
-    opslog            ----> mongodb数据库名
-    auth              ----> mongodb集合名
-    syslog            ----> 日志格式
+
+    python /admin/tailflog.py /var/log/auth.log opslog auth syslog
+    注：/var/log/auth.log ----> 日志读取文件
+        opslog            ----> mongodb数据库名
+        auth              ----> mongodb集合名
+        syslog            ----> 日志格式
