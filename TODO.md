@@ -1,12 +1,15 @@
+# 自动化部署
+参考: tools/setup.py
+
 # mongodo环境部署
-参考:tools/init_db.py
+参考: tools/init_db.py
 
 # flask环境部署
-pip install virtualenv
-virtualenv /usr/local/venv
-. /usr/local/venv/bin/activate
-pip install Flask Flask-MongoAlchemy
-pip install uwsgi
+    pip install virtualenv
+    virtualenv /usr/local/venv
+    . /usr/local/venv/bin/activate
+    pip install Flask Flask-MongoAlchemy
+    pip install uwsgi
 
 # nginx环境部署
     cat > /etc/nginx/nginx.conf << EOF
@@ -30,3 +33,4 @@ pip install uwsgi
         }
     }
     EOF
+
