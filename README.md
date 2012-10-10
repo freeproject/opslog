@@ -25,6 +25,8 @@
     /admin/tailflog.py 
 
     server端：
+    /usr/local/nginx
+    /usr/local/mongodb
     /data/mongodb/
     /data/project/opslog
     |-- documents.py
