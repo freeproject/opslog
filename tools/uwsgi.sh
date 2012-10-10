@@ -1,6 +1,6 @@
 touch /tmp/opslog
-. /usr/local/venv/bin/activate
-cd /data/project/opslog
+. /opt/venv/bin/activate
+cd /opt/project/opslog
 uwsgi -s /tmp/uwsgi.sock \
 -w main:app \
 -H /usr/local/venv \
