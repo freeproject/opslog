@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}" />
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='datepicker/css/datepicker.css') }}" />
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='daterangepicker/css/daterangepicker.css') }}" />
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='datepicker/js/bootstrap-datepicker.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='daterangepicker/js/date.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='daterangepicker/js/daterangepicker.js') }}"></script>
+        <script type="text/javascript">
+        $(function() {
+        $('.datepicker').datepicker()
+        });
+        </script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+	$('input[name="daterange"]').daterangepicker();
+	});
+	</script>
+    	<title>{% block title %}{% endblock %} | Central Log  System</title>
+    </head>
+    <body>
+        {% block content %}
+        {% endblock %}
+        <address>Copyleft by ZhangChuan</address>
+    </div>
+    </body>
+</html>

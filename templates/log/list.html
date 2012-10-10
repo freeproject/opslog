@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+
+    <form action="{{ url_for('list_filter', category=category) }}" method="POST" class="form-horizontal">
+    <table>
+        <tr>
+        <td style="width: 94px">
+	    category
+        </td>
+        <td style="width: 94px">
+            daterange
+        </td>
+        <td style="width: 188px">
+	    hostname
+        </td>
+        <td style="width: 282px">
+            keyword
+        </td>
+	<td style="width: 94px">
+        </td>
+	</tr>
+        <tr>
+        <td style="width: 94px">
+            <select style="width: 94px" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+	    <option selected> </option>
+            <option value="{{url_for('list_log', category='auth')}}">auth</option>
+            <option value="{{url_for('list_log', category='cron')}}">cron</option>
+            <option value ="{{url_for('list_log', category='daemon')}}">daemon</option>
+            <option value="{{url_for('list_log', category='kern')}}">kernel</option>
+            <option value="{{url_for('list_log', category='syslog')}}">syslog</option>
+            </select>
+        </td>
+        <td style="width: 94px">
+            <input style="width: 94px" type="text" class="input" name="daterange" value="">
+        </td>
+        <td style="width: 188px">
+            <input style="width: 188px" type="text" class="input" name="hostname" value="">
+        </td>
+        <td style="width: 282px">
+            <input style="width: 282px" type="text" class="input" name="letter" value="" />
+        </td>
+        <td style="width: 94px">
+            <button type="submit" class="btn">Search</button>
+        </td>
+        </tr>
+    </table>
+    </form>
+    <table class="table table-condensed">
+        {% for log in pagination.items %}
+            <tr>
+            <td style="width: 75px">{{ log.time }}</td>
+            <td style="width: 75px">{{ log.host }}</td>
+            <td style="width: 745px">{{ log.message }}</td>
+            <td style="width: 45px">{{ log.ident }}</li>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

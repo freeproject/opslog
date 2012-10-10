@@ -1,0 +1,23 @@
+{% extends "log/list.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="tabbable">
+        <ul class="nav nav-tabs">
+            <li><a href="{{url_for('list_log', category=category)}}">Top</a></li>
+            {% if pagination.has_prev() %}
+                <li><a href="{{url_for('list_log', category=category, page=pagination.prev_num)}}">&lt; Prev</a></li>
+            {% endif %}
+            {% if pagination.has_next() %}
+                <li><a href="{{url_for('list_log', category=category, page=pagination.next_num)}}">Next&gt;</a></li>
+            {% endif %}
+        </ul>
+    </div>      
+
+    {{ super() }}
+
+{% endblock %}
