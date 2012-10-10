@@ -22,70 +22,14 @@
 ## _项目结构_
 
     client端：
-    /opt/admin/tailflog.py 
+    /opt/admin/tailflog.py  # tailflog.py程序 
 
     server端：
-    /usr/local/nginx
-    /usr/local/mongodb
-    /data/mongodb/
-    /data/project/opslog
-    |-- documents.py
-    |-- main.py
-    |-- README.md
-    |-- settings.py
-    |-- static
-    |   |-- bootstrap
-    |   |   |-- css
-    |   |   |   |-- bootstrap.css
-    |   |   |   |-- bootstrap.min.css
-    |   |   |   |-- bootstrap-responsive.css
-    |   |   |   `-- bootstrap-responsive.min.css
-    |   |   |-- img
-    |   |   |   |-- glyphicons-halflings.png
-    |   |   |   `-- glyphicons-halflings-white.png
-    |   |   `-- js
-    |   |       |-- bootstrap.js
-    |   |       `-- bootstrap.min.js
-    |   |-- bootstrap-daterangepicker
-    |   |   |-- date.js
-    |   |   |-- daterangepicker.css
-    |   |   |-- daterangepicker.js
-    |   |   `-- README.md
-    |   |-- calendar.css
-    |   |-- cal.js
-    |   |-- datepicker
-    |   |   |-- css
-    |   |   |   `-- datepicker.css
-    |   |   |-- js
-    |   |   |   `-- bootstrap-datepicker.js
-    |   |   `-- less
-    |   |       `-- datepicker.less
-    |   |-- daterangepicker
-    |   |   |-- css
-    |   |   |   `-- daterangepicker.css
-    |   |   |-- js
-    |   |   |   |-- date.js
-    |   |   |   `-- daterangepicker.js
-    |   |   `-- less
-    |   |       `-- README.md
-    |   |-- favicon.ico
-    |   `-- highlight.js
-    |-- templates
-    |   |-- base.html
-    |   |-- log
-    |   |   |-- list_all.html
-    |   |   |-- list_filter.html
-    |   |   `-- list.html
-    |   `-- srv
-    |       |-- srv_info.html
-    |       `-- title.html
-    |-- TODO.md
-    `-- tools
-        |-- flask.sh
-        |-- init_db.py
-        |-- tailflog.py
-        `-- uwsgi.sh
-
+    /usr/local/nginx        # nginx安装目录
+    /usr/local/mongodb      # mongodb安装目录
+    /data/mongodb/          # mongodb数据目录
+    /data/project/opslog    # flask程序目录
+    
 ## _基本约定_
 
 ## _信息反馈_
