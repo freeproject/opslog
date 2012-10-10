@@ -19,16 +19,16 @@
 #### server端: flask + mongodb
 功能：mongodb作为数据存储层，flask作为前端展示层。
 
-## _项目结构_
+## _项目文件结构_
 
     client端：
     /opt/admin/tailflog.py  # tailflog.py程序 
 
     server端：
-    /usr/local/nginx        # nginx安装目录
-    /usr/local/mongodb      # mongodb安装目录
-    /data/mongodb/          # mongodb数据目录
-    /data/project/opslog    # flask程序目录
+    /opt/nginx        # nginx安装目录
+    /opt/mongodb      # mongodb安装目录
+    /opt/mongodb/data         # mongodb数据目录
+    /opt/project/opslog    # flask程序目录
     
 ## _基本约定_
 
