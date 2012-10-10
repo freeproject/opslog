@@ -25,6 +25,7 @@
     /admin/tailflog.py 
 
     server端：
+    /data/mongodb/
     /data/project/opslog
     |-- documents.py
     |-- main.py
