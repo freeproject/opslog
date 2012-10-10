@@ -1,3 +1,9 @@
+#=============================================================================
+#       Author: Eric Zhang
+#        Email: zhang.chuan@ymail.com
+#      LICENCE: Copyright (c) 2012 ,Eric Zhang
+#   LastChange: 2012-10-10 09:27:02
+#=============================================================================
 from pymongo import Connection, DESCENDING, ASCENDING
 
 

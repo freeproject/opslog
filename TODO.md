@@ -2,9 +2,14 @@
 参考:tools/init_db.py
 
 # flask环境部署
-参考:tools/flask.sh
+pip install virtualenv
+virtualenv /usr/local/venv
+. /usr/local/venv/bin/activate
+pip install Flask Flask-MongoAlchemy
+pip install uwsgi
 
 # nginx环境部署
+<code>
 cat > /etc/nginx/nginx.conf << EOF
 worker_processes  1;
 events {
@@ -27,4 +32,4 @@ http {
      }
 }
 EOF
-
+</code>
