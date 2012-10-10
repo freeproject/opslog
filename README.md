@@ -22,7 +22,7 @@
 ## _项目结构_
 
     client端：
-    /admin/tailflog.py 
+    /opt/admin/tailflog.py 
 
     server端：
     /usr/local/nginx
