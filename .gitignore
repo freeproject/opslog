@@ -25,5 +25,4 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
-opslog.wpu
-opslog.wpr
+*.wp[ru]
