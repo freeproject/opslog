@@ -1,9 +1,9 @@
 touch /tmp/opslog
-. /opt/venv/bin/activate
+. /opt/pyenv/bin/activate
 cd /opt/project/opslog
 uwsgi -s /tmp/uwsgi.sock \
 -w main:app \
--H /usr/local/venv \
+-H /opt/pyenv \
 --listen 100 \
 --buffer-size 32768 \
 --max-requests 2000 \
