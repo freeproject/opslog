@@ -13,9 +13,12 @@ wget -c http://fastdl.mongodb.org/linux/mongodb-linux-$arch-2.2.0.tgz
 echo "****Install Mongo****"
 tar -xvf $SRCDIR/mongodb* -C /opt/
 mv -f /opt/mongodb-linux-${arch}-2.2.0 /opt/mongodb
-
+mkdir /opt/mongodb/{data,etc}
+cp init.d-mongod /etc/rc.d/init.d/mongod
+chmod +x /etc/rc.d/init.d/mongod
 cat > /opt/mongodb/etc/mongo.conf << EOF
 logpath=/var/log/mongod.log
+auth=true
 rest=true
 logappend=true
 # fork and run in background
@@ -24,7 +27,7 @@ port = 27017
 dbpath=/opt/mongodb/data
 journal = true
 EOF
-mkdir /opt/mongodb/{data,etc}
+
 echo "****COMPLETE****"
 #INSTALL NGINX
 echo "Start Install Nginx"
@@ -55,4 +58,6 @@ cat > /opt/nginx/conf/nginx.conf << EOF
         }
     }
 EOF
+cp init.d-nginx /etc/rc.d/init.d/nginx
+chmod +x /etc/rc.d/init.d/nginx
 echo "****Complete****"  
