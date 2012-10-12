@@ -22,14 +22,14 @@ flask作为前端展示层，查询规则支持PCRE标准正则语法。
 
 ## _项目文件结构_
 
-    client端：
-    /opt/admin/tailflog.py  # tailflog.py程序 
+#### client端：
+    /usr/local/bin/tailflog.py  # tailflog.py程序 
 
-    server端：
-    /opt/nginx        # nginx安装目录
-    /opt/mongodb      # mongodb安装目录
-    /opt/mongodb/data         # mongodb数据目录
-    /opt/project/opslog    # flask程序目录
+#### server端：
+    /opt/nginx                  # nginx安装目录
+    /opt/mongodb                # mongodb安装目录
+    /opt/mongodb/data           # mongodb数据目录
+    /opt/project/opslog         # flask程序目录
     
 ## _基本约定_
 
