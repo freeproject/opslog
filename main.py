@@ -9,7 +9,7 @@ tomorrow = today + timedelta(days=1)
 
 @app.route('/log/<category>/')
 @app.route('/log/<category>/<int:page>')
-def list_log(category, page=1):
+def list_syslog(category, page=1):
     title = u'OPeration System Log'
     syslog.config_collection_name = 'syslog.' + category
     pagination = syslog.query.regexp(
@@ -17,7 +17,7 @@ def list_log(category, page=1):
                             edate=tomorrow).descending('time').paginate(
                                                                page=page,
                                                                per_page=100)
-    return render_template('/log/list_all.html',
+    return render_template('/log/list_syslog.html',
                             category=category,
                             pagination=pagination,
                             title=title)
@@ -25,7 +25,7 @@ def list_log(category, page=1):
 
 @app.route('/log/<category>/filter/', methods=['POST', 'GET'])
 @app.route('/log/<category>/filter/<int:page>', methods=['POST', 'GET'])
-def list_filter(category, page=1):
+def filter_syslog(category, page=1):
     if request.method == 'POST':
         title = u'OPeration System Log'
         syslog.config_collection_name = 'syslog.' + category
@@ -48,7 +48,7 @@ def list_filter(category, page=1):
                         bdate=startdate,
                         edate=enddate).descending(
                                'time').paginate(page=page, per_page=100)
-        return render_template('/log/list_filter.html',
+        return render_template('/log/filter_syslog.html',
                                category=category,
                                pagination=pagination,
                                title=title)
@@ -56,7 +56,7 @@ def list_filter(category, page=1):
 
 @app.route('/')
 def index():
-    return redirect(url_for('list_log', category='syslog'))
+    return redirect(url_for('list_syslog', category='syslog'))
 
 if __name__ == "__main__":
     app.run()

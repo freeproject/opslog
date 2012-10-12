@@ -6,7 +6,7 @@
 
 {% block content %}
 
-    <form action="{{ url_for('list_filter', category=category) }}" method="POST" class="form-horizontal">
+    <form action="{{ url_for('filter_syslog', category=category) }}" method="POST" class="form-horizontal">
     <table>
         <tr>
         <td style="width: 94px">
@@ -28,11 +28,11 @@
         <td style="width: 94px">
             <select style="width: 94px" onchange='document.location.href=this.options[this.selectedIndex].value;'>
 	    <option selected> </option>
-            <option value="{{url_for('list_log', category='auth')}}">auth</option>
-            <option value="{{url_for('list_log', category='cron')}}">cron</option>
-            <option value ="{{url_for('list_log', category='daemon')}}">daemon</option>
-            <option value="{{url_for('list_log', category='kern')}}">kernel</option>
-            <option value="{{url_for('list_log', category='syslog')}}">syslog</option>
+            <option value="{{url_for('list_syslog', category='auth')}}">auth</option>
+            <option value="{{url_for('list_syslog', category='cron')}}">cron</option>
+            <option value ="{{url_for('list_syslog', category='daemon')}}">daemon</option>
+            <option value="{{url_for('list_syslog', category='kern')}}">kernel</option>
+            <option value="{{url_for('list_syslog', category='syslog')}}">syslog</option>
             </select>
         </td>
         <td style="width: 94px">
