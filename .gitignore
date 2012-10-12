@@ -1,3 +1,4 @@
+settings.py
 *.py[co]
 
 # Packages
@@ -26,5 +27,3 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 *.wp[ru]
-/opt/project/opslog/settings.py
-settings.py
