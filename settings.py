@@ -12,7 +12,7 @@ app.config['MONGOALCHEMY_SERVER'] = '216.12.198.98'
 app.config['MONGOALCHEMY_DATABASE'] = 'opscm'
 app.config['MONGOALCHEMY_PORT'] = 27017
 app.config['MONGOALCHEMY_USER'] = 'opscm'
-app.config['MONGOALCHEMY_PASSWORD'] = 'stm123'
+app.config['MONGOALCHEMY_PASSWORD'] = 'opscm'
 app.config['MONGOALCHEMY_SERVER_AUTH'] = False
 
 db = MongoAlchemy(app)
