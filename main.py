@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-#coding=utf-8
-
 from settings import app
 from documents import syslog
 from flask import render_template, request, redirect, url_for
@@ -14,7 +11,7 @@ tomorrow = today + timedelta(days=1)
 @app.route('/log/<category>/<int:page>')
 def list_log(category, page=1):
     title = u'OPeration System Log'
-    syslog.config_collection_name = category
+    syslog.config_collection_name = 'syslog.' + category
     pagination = syslog.query.regexp(
                             bdate=today,
                             edate=tomorrow).descending('time').paginate(
@@ -31,7 +28,7 @@ def list_log(category, page=1):
 def list_filter(category, page=1):
     if request.method == 'POST':
         title = u'OPeration System Log'
-        syslog.config_collection_name = category
+        syslog.config_collection_name = 'syslog.' + category
         re_host = request.form['hostname']
         re_message = request.form['letter']
 
