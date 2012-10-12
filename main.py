@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from settings import app
 from documents import syslog
 from flask import render_template, request, redirect, url_for
