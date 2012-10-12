@@ -1,4 +1,6 @@
+#!/usr/bin/env python
 #coding=utf-8
+
 from settings import db
 from flaskext.mongoalchemy import BaseQuery
 import re

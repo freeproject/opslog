@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+#coding=utf-8
+
 from pymongo import Connection
 from datetime import datetime
 from time import sleep
