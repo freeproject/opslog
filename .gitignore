@@ -27,3 +27,4 @@ pip-log.txt
 .mr.developer.cfg
 *.wp[ru]
 /opt/project/opslog/settings.py
+settings.py
