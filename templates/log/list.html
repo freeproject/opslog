@@ -6,7 +6,7 @@
 
 {% block content %}
 
-    <form action="{{ url_for('filter_syslog', category=category) }}" method="GET" class="form-horizontal">
+    <form action="{{ url_for('filter_syslog', category=category) }}" method="POST" class="form-horizontal">
     <table>
         <tr>
         <td style="width: 94px">
@@ -42,7 +42,7 @@
             <input style="width: 188px" type="text" class="input" name="hostname" value="">
         </td>
         <td style="width: 282px">
-            <input style="width: 282px" type="text" class="input" name="letter" value="" />
+            <input style="width: 282px" type="text" class="input" name="keyword" value="" />
         </td>
         <td style="width: 94px">
             <button type="submit" class="btn">Search</button>
