@@ -16,7 +16,7 @@ def list_syslog(category, page=1):
                             bdate=today,
                             edate=tomorrow).descending('time').paginate(
                                                                page=page,
-                                                               per_page=100)
+                                                               per_page=20)
     return render_template('/log/list_syslog.html',
                             category=category,
                             pagination=pagination,
@@ -45,7 +45,7 @@ def filter_syslog(category, page=1):
         message=re_message,
         bdate=startdate,
         edate=enddate).descending(
-            'time').paginate(page=page, per_page=100)
+            'time').paginate(page=page, per_page=20)
     return render_template('/log/filter_syslog.html',
                            category=category,
                            pagination=pagination,
