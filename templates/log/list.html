@@ -6,7 +6,7 @@
 
 {% block content %}
 
-    <form action="{{ url_for('filter_syslog', category=category) }}" method="POST" class="form-horizontal">
+    <form action="{{ url_for('filter_syslog', category=category) }}" method="GET" class="form-horizontal">
     <table>
         <tr>
         <td style="width: 94px">

@@ -22,36 +22,34 @@ def list_syslog(category, page=1):
                             pagination=pagination,
                             title=title)
 
-
-@app.route('/log/<category>/filter/', methods=['POST', 'GET'])
-@app.route('/log/<category>/filter/<int:page>', methods=['POST', 'GET'])
+@app.route('/log/<category>/filter/', methods=['GET'])
+@app.route('/log/<category>/filter/<int:page>')
 def filter_syslog(category, page=1):
-    if request.method == 'POST':
-        title = u'OPeration System Log'
-        syslog.config_collection_name = 'syslog.' + category
-        re_host = request.form['hostname']
-        re_message = request.form['letter']
+    title = u'OPeration System Log'
+    syslog.config_collection_name = 'syslog.' + category
+    re_host = request.args.get('hostname','')
+    re_message = request.args.get('letter','')
 
-        try:
-            startdate = datetime.strptime(
-                        request.form['daterange'].split('-')[0].strip(),
-                        '%m/%d/%Y')
-            enddate = datetime.strptime(
-                        request.form['daterange'].split('-')[1].strip(),
-                        '%m/%d/%Y')
-        except:
-            startdate = today
-            enddate = tomorrow
-        pagination = syslog.query.regexp(
-                        host=re_host,
-                        message=re_message,
-                        bdate=startdate,
-                        edate=enddate).descending(
-                               'time').paginate(page=page, per_page=100)
-        return render_template('/log/filter_syslog.html',
-                               category=category,
-                               pagination=pagination,
-                               title=title)
+    try:
+        startdate = datetime.strptime(
+                    request.args.get('daterange','').split('-')[0].strip(),
+                    '%m/%d/%Y')
+        enddate = datetime.strptime(
+                    request.args.get('daterange','').split('-')[1].strip(),
+                    '%m/%d/%Y')
+    except:
+        startdate = today
+        enddate = tomorrow
+    pagination = syslog.query.regexp(
+        host=re_host,
+        message=re_message,
+        bdate=startdate,
+        edate=enddate).descending(
+            'time').paginate(page=page, per_page=100)
+    return render_template('/log/filter_syslog.html',
+                           category=category,
+                           pagination=pagination,
+                           title=title)
 
 
 @app.route('/')
